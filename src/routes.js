@@ -1,16 +1,9 @@
 const express = require('express');
 const routes = express.Router();
+const VideoController = require ('./controllers/VideoController');
 
-routes.get('/', (req, res) => {
-    res.send('Hello World');
-})
 
-routes.get('/login', (req, res) => {
-    res.send('Login efetuado com sucesso!')
-})
-
-routes.get('/cadastro', (req, res) => {
-    res.send('cadastro feito com sucesso')
-})
+routes.get('/videos', VideoController.index);
+routes.post('/videos', VideoController.store);
 
 module.exports = routes;
