@@ -21,3 +21,7 @@ Application made to save notes and videos.
 ### Return example - Router: Create-Video
 
   ![Return example create video](https://github.com/juninhokaponne/api-notepad/blob/main/src/assets/create-video.png)
+
+### Return example - Router: Update Title or Video
+
+  ![Return example update video](https://github.com/juninhokaponne/api-notepad/blob/main/src/assets/update.png)
