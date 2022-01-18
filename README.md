@@ -14,6 +14,10 @@ Application made to save notes and videos.
     - Axios
     - SWR
     
- ### Return example 
+### Return example - Router: Get Vidoes
   
-  ![Return Example](https://github.com/juninhokaponne/api-notepad/blob/main/src/assets/return.png)
+  ![Return example](https://github.com/juninhokaponne/api-notepad/blob/main/src/assets/return.png)
+
+### Return example - Router: Create-Video
+
+  ![Return example create video](https://github.com/juninhokaponne/api-notepad/blob/main/src/assets/create-video.png)
