@@ -1,13 +1,14 @@
-const express = require('express');
-const mongoose = require('mongoose');
 require('dotenv').config(); 
+
+const express = require('express');
+const cors = require('cors');
+const mongoose = require('mongoose');
 const routes = require('./routes');
 const connectToDatabase = require('./database.js');
-const cors = require('cors');
+connectToDatabase();
 const port = 3333;
 const app = express();
 
-connectToDatabase();
 
 app.use(cors());
 app.use(express.json());
