@@ -38,7 +38,7 @@ module.exports = {
 
     async update (request, response){
         const { title, link } = request.body;
-
+        
         if ( !title && !link ) {
             return response.status(400).json({ error: "You must inform a new title or a new link" });
         }
@@ -50,6 +50,30 @@ module.exports = {
             await response.video.save();
             return response.status(200).json({ message: "Video updated successfuly!" })
         }catch(err){
+            response.status(500).json({ error: err.message })
+        }
+    },
+
+    async delete (request, response) {
+        try {
+            await response.video.remove();
+            return response.status(200).json({ message: "Video deleted succesfuly" })
+        }catch(err){
+            response.status(500).json({ error: err.message })
+        }
+    },
+
+    async updateLike (request, response) {
+        response.video.liked = !response.video.liked;
+
+        try {
+            await response.video.save();
+            return response.status(200).json({ 
+                message: `Video ${
+                    response.video.liked ? "liked" : "unliked"
+                } succesfuly!`, 
+            })
+        } catch (err) {
             response.status(500).json({ error: err.message })
         }
     }
